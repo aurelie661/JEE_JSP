@@ -2,11 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JSP - Hello World</title>
+  <%@include file="WEB-INF/boot/bootstrapImports.jsp"%>
+  <title>Welcome</title>
 </head>
-<body>
-<h1><%= "Hello World!" %></h1>
+<body class="text-center">
+<h1 class="text-center mt-5 mb-3">Welcome to my world !</h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<div class="row">
+  <a href="${pageContext.request.contextPath}/auth/signIn" class="col-12 mb-4">Pour vous connecter c'est ici !</a>
+  <img src="${pageContext.request.contextPath}/assets/img/R.jpg" alt="Santorin image" class="col-12">
+</div>
+
 </body>
 </html>
