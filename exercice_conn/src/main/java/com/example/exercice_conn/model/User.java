@@ -3,6 +3,8 @@ package com.example.exercice_conn.model;
 public class User {
     private static Long count=0L;
     private final Long id;
+    private String firstName;
+    private String lastName;
     private String username;
     private String password;
 
@@ -10,14 +12,32 @@ public class User {
         this.id = ++count;
     }
 
-    public User(Long id, String username, String password) {
+    public User(String firstName,String lastName, String username, String password) {
         this.id = ++count;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.username = username;
         this.password = password;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getUsername() {
@@ -38,10 +58,12 @@ public class User {
 
     @Override
     public String toString() {
-        return "User => " +
-                "id = " + id +
-                ", username = ' " + username + '\'' +
-                ", password = ' " + password + '\'' +
-                '.';
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
